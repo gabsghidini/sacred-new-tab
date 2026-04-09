@@ -17,6 +17,19 @@ Extensao de nova aba para o Chrome com foco em contemplacao, paisagens bonitas e
 3. Clique em `Carregar sem compactacao`
 4. Selecione esta pasta
 
+## Como usar no Opera
+
+1. Abra `opera://extensions`
+2. Ative `Modo do desenvolvedor`
+3. Clique em `Carregar sem compactacao`
+4. Selecione esta pasta
+5. Clique no icone da extensao para abrir a Sacred Page em uma aba normal
+
+## Compatibilidade
+
+- Chrome, Edge e outros Chromium com suporte a `chrome_url_overrides`: abre como nova aba
+- Opera: abre pela acao da extensao, porque o Opera bloqueia o override direto da nova aba
+
 ## APIs usadas
 
 - Quotes: [ZenQuotes](https://zenquotes.io/)

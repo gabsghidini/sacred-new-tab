@@ -408,6 +408,10 @@ body.landscape-preview #landscapeModeButton {
   border-color: rgba(255, 255, 255, 0.28);
 }
 
+body.standalone-mode .shell {
+  min-height: 100vh;
+}
+
 @keyframes drift {
   from {
     transform: scale(1.05) translate3d(0, 0, 0);

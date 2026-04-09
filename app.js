@@ -161,6 +161,9 @@ const verseSessionFallbackKey = "nova-aba-sagrada.verse-session-fallback";
 const quoteBatchCacheKey = "nova-aba-sagrada.quote-batch";
 const quoteSelectionKey = "nova-aba-sagrada.quote-selection";
 const unsplashAppName = "nova-aba-sagrada";
+const eyebrow = document.getElementById("eyebrow");
+const urlParams = new URLSearchParams(window.location.search);
+const isStandaloneMode = urlParams.get("mode") === "standalone";
 
 const fallbackQuotes = [
   {
@@ -245,6 +248,16 @@ function setHeroQuote(quote, sourceLabel) {
   heroQuote.textContent = quote.text;
   heroQuoteAuthor.textContent = quote.author ? `- ${quote.author}` : "- Autor desconhecido";
   heroQuoteSource.innerHTML = sourceLabel;
+}
+
+function applyRuntimeMode() {
+  if (!isStandaloneMode) {
+    return;
+  }
+
+  document.body.classList.add("standalone-mode");
+  document.title = "Nova Aba Sagrada";
+  eyebrow.textContent = "Sacred Page";
 }
 
 function setVerseStatus(text, mode = "default") {
@@ -462,6 +475,7 @@ landscapeModeButton.addEventListener("touchstart", (event) => {
 });
 
 setPhoto(currentPhotoIndex);
+applyRuntimeMode();
 updateClock();
 setInterval(updateClock, 1000);
 fetchHeroQuote();

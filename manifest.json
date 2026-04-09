@@ -3,9 +3,16 @@
   "name": "Nova Aba Sagrada",
   "description": "Substitui a nova aba do Chrome por paisagens inspiradoras e um versiculo biblico do dia.",
   "version": "1.0.0",
+  "background": {
+    "service_worker": "background.js"
+  },
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
+  "action": {
+    "default_title": "Abrir Nova Aba Sagrada"
+  },
+  "options_page": "newtab.html?mode=standalone",
   "permissions": [
     "storage"
   ],
