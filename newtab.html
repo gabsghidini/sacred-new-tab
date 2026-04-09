@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Aba Sagrada</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="background" id="background"></div>
+    <div class="background-overlay"></div>
+    <div class="grain"></div>
+
+    <main class="shell">
+      <section class="hero">
+        <div class="eyebrow">Nova Aba Sagrada</div>
+        <div class="hero-stage">
+          <div class="hero-copy">
+            <div class="time-block">
+              <p class="label">Agora</p>
+              <h1 id="clock">08:08</h1>
+              <p class="date" id="date">quinta-feira, 9 de abril</p>
+            </div>
+
+            <section class="spotlight-copy">
+              <p class="kicker">Pensamento do momento</p>
+              <blockquote class="hero-quote" id="heroQuote">
+                Lugares lindos, calma visual e uma palavra para recentrar o coracao.
+              </blockquote>
+              <p class="hero-quote-author" id="heroQuoteAuthor">Autor desconhecido</p>
+              <p class="description" id="heroQuoteSource">
+                Frase inspiradora aleatoria com cache local para manter a experiencia leve.
+              </p>
+            </section>
+          </div>
+
+          <aside class="hero-rail">
+            <div class="actions">
+              <button class="ghost-button" id="landscapeModeButton" type="button">
+                Ver paisagem
+              </button>
+              <button class="ghost-button" id="refreshPhotoButton" type="button">
+                Trocar paisagem
+              </button>
+            </div>
+
+            <div class="location-card">
+              <p class="label">Paisagem do momento</p>
+              <h3 id="locationName">Dolomitas</h3>
+              <p class="location-meta" id="locationMeta">Italia</p>
+              <p class="location-caption" id="locationCaption">
+                Luz suave, ar frio e montanhas que lembram silencio.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <aside class="verse-panel">
+        <div class="panel-header">
+          <div>
+            <p class="label">Versiculo do dia</p>
+            <h3 id="verseReference">Carregando...</h3>
+          </div>
+          <div class="status-pill" id="verseStatus">Buscando</div>
+        </div>
+
+        <blockquote class="verse-text" id="verseText">
+          Preparando a leitura de hoje...
+        </blockquote>
+
+        <div class="verse-footer">
+          <p class="verse-version" id="verseVersion">NVI</p>
+          <p class="verse-source" id="verseSource">
+            Tentando buscar na ABibliaDigital com fallback local.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
