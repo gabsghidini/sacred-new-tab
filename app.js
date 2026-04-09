@@ -257,7 +257,7 @@ function applyRuntimeMode() {
 
   document.body.classList.add("standalone-mode");
   document.title = "Nova Aba Sagrada";
-  eyebrow.textContent = "Sacred Page";
+  eyebrow.textContent = "Um canto de paz";
 }
 
 function setVerseStatus(text, mode = "default") {
@@ -302,7 +302,7 @@ async function fetchHeroQuote() {
   if (cachedSelection) {
     setHeroQuote(
       cachedSelection,
-      'Inspirational quotes via <a href="https://zenquotes.io/" target="_blank" rel="noreferrer">ZenQuotes</a>.'
+      'Frase inspiradora compartilhada por <a href="https://zenquotes.io/" target="_blank" rel="noreferrer">ZenQuotes</a>.'
     );
     return;
   }
@@ -317,7 +317,7 @@ async function fetchHeroQuote() {
       storeQuoteSelection(selected);
       setHeroQuote(
         selected,
-        'Inspirational quotes via <a href="https://zenquotes.io/" target="_blank" rel="noreferrer">ZenQuotes</a>.'
+        'Frase inspiradora compartilhada por <a href="https://zenquotes.io/" target="_blank" rel="noreferrer">ZenQuotes</a>.'
       );
       return;
     }
@@ -358,12 +358,12 @@ async function fetchHeroQuote() {
     storeQuoteSelection(selected);
     setHeroQuote(
       selected,
-      'Inspirational quotes via <a href="https://zenquotes.io/" target="_blank" rel="noreferrer">ZenQuotes</a>.'
+      'Frase inspiradora compartilhada por <a href="https://zenquotes.io/" target="_blank" rel="noreferrer">ZenQuotes</a>.'
     );
   } catch (error) {
     const fallbackQuote = getRandomItem(fallbackQuotes);
     storeQuoteSelection(fallbackQuote);
-    setHeroQuote(fallbackQuote, "Frase local aleatoria para manter a experiencia estavel.");
+    setHeroQuote(fallbackQuote, "Uma frase tranquila para seguir acompanhando seu dia.");
     console.warn("Quote aleatoria indisponivel agora.", error);
   }
 }
@@ -386,8 +386,8 @@ async function fetchDailyVerse() {
     const parsed = JSON.parse(cachedVerse);
     if (parsed?.source === "api") {
       setVerse(parsed);
-      setVerseStatus("Cache do dia");
-      verseSource.textContent = "Versiculo recuperado do cache local da extensao.";
+      setVerseStatus("Guardado hoje");
+      verseSource.textContent = "Uma passagem guardada para acompanhar voce ao longo do dia.";
       return;
     }
 
@@ -420,17 +420,17 @@ async function fetchDailyVerse() {
 
     localStorage.setItem(`${verseCachePrefix}${todayKey}`, JSON.stringify(versePayload));
     setVerse(versePayload);
-    setVerseStatus("API ao vivo");
-    verseSource.textContent = "Versiculo carregado pela API ABibliaDigital.";
+    setVerseStatus("Escolha de hoje");
+    verseSource.textContent = "Passagem trazida pela ABibliaDigital para este momento.";
   } catch (error) {
     const fallback = getFallbackVerse();
     const errorMessage =
       error instanceof Error ? error.message : "Falha desconhecida ao buscar o versiculo.";
 
     setVerse(fallback);
-    setVerseStatus("Fallback local", "warning");
+    setVerseStatus("Cuidado local", "warning");
     verseSource.textContent =
-      "A API nao respondeu bem agora; a extensao sorteou um versiculo local para manter a experiencia estavel.";
+      "Hoje essa passagem esta vindo da propria extensao, com o mesmo cuidado na escolha.";
 
     // A API pode oscilar com 500. Registramos no maximo uma vez por sessao
     // para evitar poluir o console quando o fallback ja cobre a experiencia.

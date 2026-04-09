@@ -1,6 +1,6 @@
 # Nova Aba Sagrada
 
-Extensao de nova aba para o Chrome com foco em contemplacao, paisagens bonitas e leitura inspiradora.
+Extensao de nova aba com foco em contemplacao, paisagens bonitas e leitura inspiradora para compartilhar com amigos e familia.
 
 ## O que ela faz
 
